@@ -1,8 +1,8 @@
 SUMMARY -- Ansible, Configuration Management Made Easy: A play in three acts
 =================================
-Ansible is a configuration management system much like Puppet, Chef or CFEngine which radically simplifies deploying configurations to a multitude of systems.
+Ansible is a configuration management system similar to Puppet, Chef or CFEngine which radically simplifies deploying configurations to a multitude of systems.
 
-Come learn how to install, configure, and use one of the simplest and easy to use Configuration Mangament tools. 
+Come learn how to install, configure, and use one of the simplest and easy to use (but still very powerful) Configuration Management tools. 
 This presentation is a real-world example done in a fun and entertaining format -- The Three-Act Play.
 
 PRESENTER BIOS
