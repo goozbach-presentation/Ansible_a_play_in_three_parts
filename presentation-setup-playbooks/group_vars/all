@@ -1,0 +1,4 @@
+---
+# modify this parameter to enable the presentation using this network device.
+presentation_interface: eth1
+presentation_netmask: 255.255.255.0

@@ -1,0 +1,15 @@
+
+[ansibleservers]
+ansible.example.com
+
+[webservers]
+web-1.example.com
+web-2.example.com
+
+[dbservers]
+db-1.example.com
+db-2.example.com
+
+[appservers]
+app-1.example.com
+app-2.example.com
