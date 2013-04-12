@@ -27,14 +27,14 @@ Forking
 This presentation can be fully re-done by anyone and there are some tools present to help with that.
 
 ## The Servers
-* The directory `presentation-setup-playbooks/` contains a fully tested ansible playbook for setting up the same environment used for the course.  Yes, we are bootstrapping an Ansible talk using Ansible.  It requires 7 servers (We used virtualbox guests with two nics, one using nat, the other using a host-only network).  By default the above playbook sets up the following:
-** ansible.example.com -- the ansible server to manage the rest -- 10.200.45.100
-*** The file `kickstarts/ansible-server-kickstart.cfg` was used to create the server 'ansible.example.com' and the remainder of the servers were created as 'linked clones' of the ansible server, ***AFTER*** the ansible server was updated using `yum update`.
-** web servers
-*** web1.example.com -- 10.200.45.10
-*** web2.example.com -- 10.200.45.11
-*** db1.example.com -- 10.200.45.20
-*** db2.example.com-- 10.200.45.21
-*** app1.example.com -- 10.200.45.30
-*** app2.example.com -- 10.200.45.31
+The directory `presentation-setup-playbooks/` contains a fully tested ansible playbook for setting up the same environment used for the course.  Yes, we are bootstrapping an Ansible talk using Ansible.  It requires 7 servers (We used virtualbox guests with two nics, one using nat, the other using a host-only network).  By default the above playbook sets up the following:
+* ansible.example.com -- the ansible server to manage the rest -- 10.200.45.100
+** The file `kickstarts/ansible-server-kickstart.cfg` was used to create the server 'ansible.example.com' and the remainder of the servers were created as 'linked clones' of the ansible server, ***AFTER*** the ansible server was updated using `yum update`.
+* web servers
+** web1.example.com -- 10.200.45.10
+** web2.example.com -- 10.200.45.11
+** db1.example.com -- 10.200.45.20
+** db2.example.com-- 10.200.45.21
+** app1.example.com -- 10.200.45.30
+** app2.example.com -- 10.200.45.31
 
