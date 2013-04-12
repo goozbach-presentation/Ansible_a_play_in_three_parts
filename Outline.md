@@ -59,6 +59,7 @@ Act III -- A Happy Manager
 * 
 * Sysadmin comes back in 3min and says "Done!"
 * Manager says "HOW?!"
+** Show site playbook.
 
 ***TIME PASSES***
 
@@ -74,3 +75,7 @@ EPILOGUE -- What else can ansible do?
 * delegate_to 
 * register
 * config file
+* cowsay Thomas "this is great, but something's missing...." -- Derek "I Know COWS!"
+* derek installs cowsay, re-runs playbook
+* Thomas -- "THAT'S IT! PERFECT!"
+
