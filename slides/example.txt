@@ -1,0 +1,12 @@
+<[autotemplate]
+title={The wiki2beamer example}
+[autotemplate]>
+
+== Introduction ==
+
+==== ACT I ====
+Act I
+
+==== ACT II ====
+Act II
+
