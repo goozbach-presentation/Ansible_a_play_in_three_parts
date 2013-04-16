@@ -43,7 +43,7 @@ TH: This is great! I might just get a raise because of how well this project is 
 DC: Yep, the tagline is "Automation even a manager can understand"
 TH: There just seems to be one thing missing; I can't quite place my finger on it...
 DC: I Know!
-*DC runs ansible localhost -m yum -a 'name=cowsay state=latest' *
+*DC runs ansible ansibleservers -m yum -a 'name=cowsay state=latest' *
 TH: Awwww yea!
 
 ==FIN==
