@@ -2,15 +2,15 @@
 
 all: tex pdf
 
-tex: example.tex
+tex: slides.tex
 
-pdf: example.pdf
+pdf: slides.pdf
 
-example.tex: example.txt Makefile
-	wiki2beamer example.txt > example.tex
+slides.tex: slides.txt Makefile
+	wiki2beamer slides.txt > slides.tex
 	
-example.pdf: example.tex Makefile
-	pdflatex example.tex
+slides.pdf: slides.tex Makefile
+	pdflatex slides.tex
 
 clean:
-	rm example.aux example.log example.nav example.out example.pdf example.snm example.tex example.toc example.vrb
+	rm slides.aux slides.log slides.nav slides.out slides.pdf slides.snm slides.tex slides.toc slides.vrb

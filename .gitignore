@@ -1,1 +1,9 @@
 .*retry
+slides/slides.aux
+slides/slides.log
+slides/slides.nav
+slides/slides.out
+slides/slides.pdf
+slides/slides.snm
+slides/slides.tex
+slides/slides.toc

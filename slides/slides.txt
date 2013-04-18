@@ -1,0 +1,33 @@
+<[autotemplate]
+title={Ansible, A Play In Three Parts}
+[autotemplate]>
+
+== Introduction ==
+
+==== Derek Carter ====
+<[columns]
+[[[ 2in ]]]
+* Full Time Linux Consultant
+** Training
+** Automation and Infrastructure
+** \url{http://goozbach.com}
+* Prior Work
+** Sr Linux Admin at a Fortune 500 media company
+** Consultant to state agencies
+** QA Engineer at SAN storage company
+
+[[[ 2in ]]]
+<<<derek.png,scale=0.4>>>
+[columns]>
+
+==== Thomas Holmquist ===
+
+==== ACT I ====
+<[center]
+Act I
+[center]>
+
+==== ACT II ====
+<[center]
+Act II
+[center]>
