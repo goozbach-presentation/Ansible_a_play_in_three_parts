@@ -1,0 +1,12 @@
+
+---
+# file: ansiblehost/tasks/main.yml
+
+- name: ansiblehosts install packages loop
+  yum: name=$item state=latest
+  tags:
+    - yum
+    - packages
+  with_items:
+    - httpd
+    - git

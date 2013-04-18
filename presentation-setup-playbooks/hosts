@@ -1,5 +1,5 @@
 
-[ansibleservers]
+[ansiblehost]
 ansible.example.com
 
 [webservers]

@@ -5,8 +5,11 @@ title={The wiki2beamer example}
 == Introduction ==
 
 ==== ACT I ====
+<[center]
 Act I
+[center]>
 
 ==== ACT II ====
+<[center]
 Act II
-
+[center]>

@@ -1,0 +1,7 @@
+---
+# file: common.yml
+- hosts: all
+  tasks:
+    - include: common/tasks/main.yml tags=common
+  handlers:
+    - include: common/handlers/main.yml

@@ -8,12 +8,13 @@ TH: Yea, I'm your new boss. My uncle John just hired me.
 DC: John the owner?
 TH: Yep, my uncle, he hired me today.
 DC: Nice to meet you, boss.
-*TODO*
 TH: So let's get to work; Uncle John said that we need to set up three new servers: database, web and app.
 DC: Sounds like a lot of work; we'd better get started!
 TH: *You'd* Better get started. I'm going to go check out how well my new office chair swivels.
 
 *TH leaves; DC goes into explanation on what needs to be done*
+
+** start each server manually, start installing software, etc** 
 
 TH: You done? What's taking so long?
 DC: This is grunt work... It takes so long to do each system by hand.

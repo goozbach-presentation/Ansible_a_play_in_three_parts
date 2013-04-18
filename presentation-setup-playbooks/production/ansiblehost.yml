@@ -1,0 +1,7 @@
+---
+# file: ansiblehost.yml
+- hosts: ansiblehost
+  tasks:
+    - include: ansiblehost/tasks/main.yml
+  handlers:
+    - include: ansiblehost/handlers/main.yml
