@@ -6,7 +6,7 @@
       prompt: "Please specify a MySQL root password"
       private: yes
   tasks:
-    - include: common/tasks/main.yml tags=common
-    - include: common/tasks/main.yml tags=db
+    - include: ../common/tasks/common.yml tags=common
+    - include: ../common/tasks/db.yml tags=db
   handlers:
-    - include: common/handlers/main.yml
+    - include: ../common/handlers/main.yml

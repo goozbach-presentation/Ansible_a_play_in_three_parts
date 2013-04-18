@@ -1,0 +1,20 @@
+
+---
+# file: common/tasks/app.yml
+
+- name: install php
+  yum: pkg=php state= installed
+  tags:
+    - app
+  notify: restart apache
+
+- name: create app dir
+  file: path=${aleapp} owner=root group=root mode=0755 state=directory
+  tags:
+    - app
+    - content
+
+- name: get app content
+  get_url: url=http://ansible.example.com/app_files/app_index.php.txt dest=${aleapp}/app_index.php mode=0755
+    - app
+    - content
