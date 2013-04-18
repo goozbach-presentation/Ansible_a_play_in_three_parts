@@ -32,7 +32,7 @@
   ignore_errors: yes
 
 - name: ensure anonymous users are not in the database
-  mysql_user: name='' host=$item state=absent logint_password=${root_db_password}
+  mysql_user: name='' host=$item state=absent login_password=${root_db_password}
   with_items:
     - localhost
     - $inventory_hostname
