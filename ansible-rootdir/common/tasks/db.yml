@@ -38,7 +38,7 @@
     - $inventory_hostname
   tags:
     - db
-   ignore_errors: yes
+  ignore_errors: yes
 
 - name: remove the test database
   mysql_db: name=test state=absent login_password=${root_db_password}
