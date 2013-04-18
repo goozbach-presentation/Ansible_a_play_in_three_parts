@@ -1,0 +1,8 @@
+---
+# file: web.yml
+- hosts: webservers
+  tasks:
+    - include: common/taasks/main.yml tags=common
+    - include: common/tasks/main.yml tags=web
+  handlers:
+    - include: common/handlers/main.yml

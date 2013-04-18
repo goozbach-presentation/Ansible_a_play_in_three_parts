@@ -2,7 +2,7 @@
 # file: db.yml
 - hosts: dbservers
   vars_prompt:
-    - name: "mysqlrootpass"
+    - name: "root_db_password"
       prompt: "Please specify a MySQL root password"
       private: yes
   tasks:

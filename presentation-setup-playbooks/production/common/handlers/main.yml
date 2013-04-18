@@ -16,3 +16,9 @@
   service: name=network state=restarted
   notify:
     - ping all
+
+- name: restart mysql
+  service: name=mysqld state=restarted
+
+- name: restart apache
+  service: name=httpd state=restarted
