@@ -11,26 +11,26 @@ DC: Nice to meet you, boss.
 *TODO*
 TH: So let's get to work; Uncle John said that we need to set up three new servers: database, web and app.
 DC: Sounds like a lot of work; we'd better get started!
-TH: *You'd* Better get started. I'm going to go check how well my new office chair spins.
+TH: *You'd* Better get started. I'm going to go check out how well my new office chair swivels.
 
 *TH leaves; DC goes into explanation on what needs to be done*
 
 TH: You done? What's taking so long?
-DC: This is grunt work... It takes too long.
-TH: Actually, I was just reading in Information Week about something called Puppet. Not sure exactly what it is but let's use it. (*TODO* is this TOO much snark?)
-DC: OK, I'll give it a shot
-TH: You can find me in my office... Just knock first... (*TODO* Maybe I should only make a golf joke here..)
+DC: This is grunt work... It takes so long to do each system by hand.
+TH: Actually, I was just reading in Information Week about something called Puppet. Not sure exactly what it is but let's use it.
+DC: OK... I guess I can give it a shot
+TH: You can find me in my office... Just knock first...
 
-*TH leaves and DC pulls up some scary documentation* (*TODO* SFX hair pulling) ;)
+*TH leaves and DC pulls up some scary documentation*
 
 ACT 2
 =================================
 DC: This is madness; I want to manage my systems, not manage puppet!
 DC: *Technical stuff on why puppet blows chunks*
+*TH walks in*
 TH: Sounds like things are going great!
-DC: No, I appreciate the layer of abstraction that Puppet gives me but surely there's a better way!!
+DC: Not really, I appreciate the layer of abstraction that Puppet gives me but now instead of managing my systems I'm too busy managing Puppet! Surely there's a better way!!
 
-*TODO* is the following WAY over the top?
 *Angelic music plays as "Ansible" shows up on the projector*
 DC: Wow, I seem to have forgotten everything about Puppet already (*TODO* feel free to replace this line with something actually witty)
 
