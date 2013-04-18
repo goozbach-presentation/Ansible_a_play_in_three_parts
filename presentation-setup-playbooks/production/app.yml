@@ -1,0 +1,10 @@
+---
+# file: app.yml
+- hosts: appservers
+  vars:
+    - appdir = /opt/aleapp
+  tasks:
+    - include: common/tasks/main.yml tags=common
+    - include: common/tasks/main.yml tags=app
+  handlers:
+    - include: common/handlers/main.yml
