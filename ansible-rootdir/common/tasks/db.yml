@@ -2,10 +2,11 @@
 ---
 # file: common/tasks/db.yml
 
-- name: install mysql
+- name: package install loop
   yum: pkg=${item} state=installed
   with_items:
     - mysql-server
+    - MySQL-python
   tags:
     - db
 

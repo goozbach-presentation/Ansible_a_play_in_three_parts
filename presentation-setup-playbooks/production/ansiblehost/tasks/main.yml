@@ -87,6 +87,12 @@
     - git
     - prereqs
 
+- name: update git server repo for http serve
+  shell: cd /var/www/html/webroot.git && git update-server-info
+  tags:
+    - git
+    - prereqs
+
 - name: create app_files directory
   file: path=/var/www/html/app_files state=directory
   tags:
