@@ -10,17 +10,21 @@
     - web
 
 - name: configure httpd.conf from template
-  template: src=common/templates/_etc_httpd_conf_httpd_conf dest=/etc/httpd/httpd.conf owner=root group=root mode=0644
+  template: src=../common/templates/_etc_httpd_conf_httpd_conf dest=/etc/httpd/httpd.conf owner=root group=root mode=0644
   tags:
     - web
   notify:
     - restart apache
 
+- name: ensure apache started
+  service: name=httpd state=started
+  tags:
+    - web
+
 - name: ensure apache enabled
   service: name=httpd enabled=yes
   tags:
     - web
-  notify: restart apache
 
 - name: get web content
   git: repo=http://ansible.example.com/webroot.git dest=/var/www/html
