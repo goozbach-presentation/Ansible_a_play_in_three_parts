@@ -13,4 +13,4 @@ slides.pdf: slides.tex Makefile
 	pdflatex slides.tex
 
 clean:
-	rm slides.aux slides.log slides.nav slides.out slides.pdf slides.snm slides.tex slides.toc slides.vrb
+	rm -f slides.aux slides.log slides.nav slides.out slides.pdf slides.snm slides.tex slides.toc

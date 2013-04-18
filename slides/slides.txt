@@ -1,4 +1,4 @@
- <[autotemplate]
+<[autotemplate]
 title={Ansible, A Play In Three Parts}
 [autotemplate]>
 
@@ -20,7 +20,7 @@ title={Ansible, A Play In Three Parts}
 <<<derek.png,scale=0.4>>>
 [columns]>
 
-==== Thomas Holmquist ===
+==== Thomas Holmquist ====
 * Ex-President of LUG@GT
 * Systems Development Engineer at Georgia Tech
 
