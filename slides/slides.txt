@@ -1,4 +1,4 @@
-<[autotemplate]
+ <[autotemplate]
 title={Ansible, A Play In Three Parts}
 [autotemplate]>
 
@@ -21,6 +21,8 @@ title={Ansible, A Play In Three Parts}
 [columns]>
 
 ==== Thomas Holmquist ===
+* Ex-President of LUG@GT
+* Systems Development Engineer at Georgia Tech
 
 ==== ACT I ====
 <[center]
@@ -30,4 +32,14 @@ Act I
 ==== ACT II ====
 <[center]
 Act II
+[center]>
+
+==== Gift From Above ====
+<[center]
+Ansible
+[center]>
+
+==== ACT III ====
+<[center]
+Act III
 [center]>
