@@ -1,0 +1,34 @@
+
+---
+# file: common/tasks/common.yml
+
+- name: Install derek ssh key
+  authorized_key: user=root key="$FILE(common/files/derek-key.pub)"
+  tags:
+    - ssh
+    - common
+
+- name: install hosts file
+  copy: src=common/files/_etc_hosts dest=/etc/hosts owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+  notify:
+    - ping all
+
+- name: install network config file
+  template: src=common/templates/_etc_sysconfig_network dest=/etc/sysconfig/network owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+  notify:
+    - ping all
+
+- name: install network interface file
+  template: src=common/templates/_etc_sysconfig_network-scripts_interface dest=/etc/sysconfig/network-scripts/ifcfg-${presentation_interface} owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+    - networking
+  notify:
+    - restart network

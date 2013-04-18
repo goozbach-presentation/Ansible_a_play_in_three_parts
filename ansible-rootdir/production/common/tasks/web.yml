@@ -2,11 +2,10 @@
 ---
 # file: common/tasks/web.yml
 
-- name: install packages loop
+- name: install apache
   yum: pkg=${item} state=installed
   with_items:
     - httpd
-    - git
   tags:
     - web
 

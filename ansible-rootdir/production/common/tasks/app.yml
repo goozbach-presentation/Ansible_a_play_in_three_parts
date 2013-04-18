@@ -3,7 +3,7 @@
 # file: common/tasks/app.yml
 
 - name: install php
-  yum: pkg=php state=installed
+  yum: pkg=php state= installed
   tags:
     - app
   notify: restart apache
@@ -16,6 +16,5 @@
 
 - name: get app content
   get_url: url=http://ansible.example.com/app_files/app_index.php.txt dest=${aleapp}/app_index.php mode=0755
-  tags:
     - app
     - content

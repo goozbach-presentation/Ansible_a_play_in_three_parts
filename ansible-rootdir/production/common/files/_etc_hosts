@@ -1,0 +1,11 @@
+127.0.0.1   localhost localhost.localdomain
+::1         localhost localhost.localdomain
+# ansible-presentation
+10.200.45.100 ansible.example.com ansible
+10.200.45.10  web-1.example.com web-1 web1 web1.example.com
+10.200.45.11  web-2.example.com web-2 web2 web2.example.com
+10.200.45.20  db-1.example.com db-1 db1 db1.example.com
+10.200.45.21  db-2.example.com db-2 db2 db2.example.com
+10.200.45.30  app-1.example.com app-1 app1 app1.example.com
+10.200.45.31  app-2.example.com app-2 app2 app2.example.com
+
