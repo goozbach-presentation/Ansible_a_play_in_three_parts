@@ -1,7 +1,7 @@
 <[autotemplate]
 title={Ansible, A Play In Three Parts}
 [autotemplate]>
-
+ 
 == Introduction ==
 
 ==== Derek Carter ====
@@ -25,21 +25,51 @@ title={Ansible, A Play In Three Parts}
 * Systems Development Engineer at Georgia Tech
 
 ==== ACT I ====
+\Large
 <[center]
 Act I
 [center]>
+\normalsize
 
 ==== ACT II ====
+\Large
 <[center]
 Act II
 [center]>
+\normalsize
 
 ==== Gift From Above ====
+\Large
 <[center]
 Ansible
 [center]>
+\normalsize
 
 ==== ACT III ====
+\Large
 <[center]
 Act III
 [center]>
+\normalsize
+
+==== ====
+\Large
+<[center]
+SOME TIME PASSES
+[center]>
+\normalsize
+
+==== EPILOGUE ====
+What else can Ansible do?
+* Ansible Modules
+** Cloud stuff
+*** EC2
+*** OpenStack
+
+==== Advanced Playbooks ====
+* with\_items
+* only\_if
+* delegate\_to 
+* register
+* Configuration file
+
