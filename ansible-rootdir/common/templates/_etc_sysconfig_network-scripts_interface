@@ -1,0 +1,7 @@
+# This file managed by ansible and *WILL* be overwritten
+DEVICE={{presentation_interface}}
+BOOTPROTO=none
+NETMASK={{presentation_netmask}}
+TYPE=Ethernet
+HWADDR=${ansible_${presentation_interface}.macaddress}
+IPADDR={{presentation_ipaddr}}
