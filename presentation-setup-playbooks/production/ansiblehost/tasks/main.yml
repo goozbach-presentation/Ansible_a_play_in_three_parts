@@ -87,3 +87,15 @@
     - git
     - prereqs
 
+- name: create app_files directory
+  file: path=/var/www/html/app_files state=directory
+  tags:
+    - app
+    - prereqs
+
+- name: copy app_files file
+  copy: src=app_files/app_index.php.txt dest=/var/www/html/app_files/app_index.php.txt
+  tags:
+    - app
+    - prereqs
+

@@ -1,0 +1,10 @@
+<html>
+ <head>
+  <title>Example APP Server: <?php echo gethostname(); ?></title>
+ </head>
+ <body>
+ <h1>
+ <?php echo '<p>Example APP Server:</p>' . gethostname(); ?>
+ </h1>
+ </body>
+</html>
