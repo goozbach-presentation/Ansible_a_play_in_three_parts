@@ -1,4 +1,4 @@
 ---
 # file: site.yml
 - include: common.yml
-- include: ansible.yml
+- include: ansiblehost.yml
