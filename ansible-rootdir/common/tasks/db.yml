@@ -45,13 +45,12 @@
   tags:
     - db
 
-- name: create mysql user
-  mysql_user: name=user login_password=${root_db_password}
-  tags:
-    - db
-  
 - name: create mysql db
-  mysql_db: name=appdb login_password=${root_db_password}
+  mysql_db: name=appdb login_user=root login_password=${root_db_password} 
   tags:
     - db
 
+- name: create mysql user
+  mysql_user: name=user login_user=root login_password=${root_db_password} priv=appdb.*:ALL
+  tags:
+    - db
