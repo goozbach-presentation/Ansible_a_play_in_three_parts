@@ -1,0 +1,55 @@
+
+---
+# file: common/tasks/db.yml
+
+- name: install mysql
+  yum: pkg=${item} state=installed
+  with_items:
+    - mysql-server
+  tags:
+    - db
+
+- name: ensure mysql started
+  service: name=mysqld state=started
+  tags:
+    - db
+
+- name: ensure mysql enabled
+  service: name=mysqld enabled=yes
+  tags:
+    - db
+  notify: restart mysql  
+
+- name: update mysql root password for all root accounts
+  mysql_user: name=root host=$item password=${root_db_password}
+  with_items:
+    - localhost
+    - $ansible_hostname
+    - 127.0.0.1
+    - ::1
+  tags:
+    - db
+
+- name: ensure anonymous users are not in the database
+  mysql_user: name='' host=$item state=absent logint_password=${root_db_password}
+  with_items:
+    - localhost
+    - $inventory_hostname
+  tags:
+    - db
+
+- name: remove the test database
+  mysql_db: name=test state=absent login_password=${root_db_password}
+  tags:
+    - db
+
+- name: create mysql user
+  mysql_user: name=user login_password=${root_db_password}
+  tags:
+    - db
+  
+- name: create mysql db
+  mysql_db: name=appdb login_password=${root_db_password}
+  tags:
+    - db
+
