@@ -21,7 +21,15 @@
   notify: restart mysql  
 
 - name: update mysql root password for all root accounts
-  mysql_user: name=root host=$item password=${root_db_password}
+  mysql_user: name=root host=$item password=${root_db_password} login_user=root
+  with_items:
+    - localhost
+  tags:
+    - db
+  ignore_errors: yes
+  
+  - name: update mysql root password for all root accounts
+  mysql_user: name=root host=$item password=${root_db_password} login_user=root login_password=${root_db_password}
   with_items:
     - localhost
     - $ansible_hostname
@@ -51,6 +59,6 @@
     - db
 
 - name: create mysql user
-  mysql_user: name=user login_user=root login_password=${root_db_password} priv=appdb.*:ALL
+  mysql_user: name=user login_user=root login_password=${root_db_password} password=insecure priv=appdb.*:ALL
   tags:
     - db
