@@ -1,6 +1,23 @@
 
 ---
 # file: ansiblehost/tasks/main.yml
+- name: copy epel repository config file
+  copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
+  tags:
+    - yum
+    - epel
+
+- name: copy epel-testing repository config file
+  copy: src=epel-testing.repo dest=/etc/yum.repos.d/epel-testing.repo
+  tags:
+    - yum
+    - epel
+
+- name: copy epel repository key file
+  copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+  tags:
+    - yum
+    - epel
 
 - name: ansiblehosts install packages loop
   yum: name=$item state=latest
@@ -10,3 +27,51 @@
   with_items:
     - httpd
     - git
+    - make
+    - rpm-build
+    - python-jinja2
+    - asciidoc
+    - PyYAML
+    - python2-devel
+    - openpgm
+    - python-crypto
+    - python-keyczar
+    - python-paramiko
+    - python-pyasn1
+    - python-zmq
+
+- name: ansiblehost service enable loop
+  service: name=$item enabled=yes
+  tags:
+    - services
+    - httpd
+  with_items:
+    - httpd
+
+- name: ansiblehost service started loop
+  service: name=$item state=started
+  tags:
+    - services
+    - httpd
+  with_items:
+    - httpd
+
+- name: ensure /root/projects exists
+  file: path=/root/projects state=directory
+  tags:
+    - projects
+
+- name: clone ansible git repo
+  git: repo=https://github.com/ansible/ansible.git dest=/root/projects/ansible
+  tags:
+    - projects
+    - git
+    - ansible
+
+- name: create ansible rpm
+  shell: creates=/usr/bin/ansible cd /root/projects/ansible/ && make clean && make rpm && rpm -ivh rpm-build/*.noarch.rpm
+  tags:
+    - projects
+    - rpm
+    - ansible
+
