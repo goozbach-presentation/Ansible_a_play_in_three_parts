@@ -75,3 +75,15 @@
     - rpm
     - ansible
 
+- name: copy gitrepo tarball to /var/tmp/
+  copy: src=webroot.git.tar.gz dest=/var/tmp/webroot.git.tar.gz owner=root group=root
+  tags:
+    - git
+    - prereqs
+
+- name: explode gitrepo tarball into /var/www
+  shell: cd /var/www/html && tar -xzf /var/tmp/webroot.git.tar.gz creates=/var/www/html/webroot.git/HEAD
+  tags:
+    - git
+    - prereqs
+
