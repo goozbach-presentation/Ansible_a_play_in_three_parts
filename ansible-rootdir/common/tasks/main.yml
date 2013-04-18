@@ -1,0 +1,134 @@
+
+---
+# file: common/tasks/main.yml
+
+- name: Install derek ssh key
+  authorized_key: user=root key="$FILE(common/files/derek-key.pub)"
+  tags:
+    - ssh
+    - common
+
+- name: install hosts file
+  copy: src=common/files/_etc_hosts dest=/etc/hosts owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+  notify:
+    - ping all
+
+- name: install network config file
+  template: src=common/templates/_etc_sysconfig_network dest=/etc/sysconfig/network owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+  notify:
+    - ping all
+
+- name: install network interface file
+  template: src=common/templates/_etc_sysconfig_network-scripts_interface dest=/etc/sysconfig/network-scripts/ifcfg-${presentation_interface} owner=root group=root mode=0644
+  tags:
+    - hosts
+    - common
+    - networking
+  notify:
+    - restart network
+
+######
+
+- name: install mysql
+  yum: pkg=${item} state=installed
+  with_items:
+    - mysql-server
+  tags:
+    - db
+
+- name: ensure mysql enabled
+  service: name=mysqld enabled=yes
+  tags:
+    - db
+  notify: restart mysql
+  
+- name: ensure mysql started
+  service: name=mysqld state=started
+  tags:
+    - db
+
+- name: update mysql root password for all root accounts
+  mysql_user: name=root host=$item password=${root_db_password}
+  with_items:
+    - localhost
+    - $ansible_hostname
+    - 127.0.0.1
+    - ::1
+  tags:
+    - db
+
+- name: ensure anonymous users are not in the database
+  mysql_user: name='' host=$item state=absent logint_password=${root_db_password}
+  with_items:
+    - localhost
+    - $inventory_hostname
+  tags:
+    - db
+
+- name: remove the test database
+  mysql_db: name=test state=absent login_password=${root_db_password}
+  tags:
+    - db
+
+- name: create mysql user
+  mysql_user: name=user login_password=${root_db_password}
+  tags:
+    - db
+  
+- name: create mysql db
+  mysql_db: name=appdb login_password=${root_db_password}
+  tags:
+    - db
+
+######
+
+- name: install apache
+  yum: pkg=${item} state=installed
+  with_items:
+    - httpd
+  tags:
+    - web
+
+- name: configure httpd.conf from template
+  template: src=common/templates/_etc_httpd_httpd.conf dest=/etc/httpd/httpd.conf owner=root group=root mode=0644
+  tags:
+    - web
+  notify:
+    - restart apache
+
+- name: ensure apache enabled
+  service: name=httpd enabled=yes
+  tags:
+    - web
+  notify: restart apache
+
+- name: get web content
+  git: repo=https://github.com/goozbach-presentation/Ansible_a_play_in_three_parts.git dest=/var/www/html
+  tags:
+    - web
+    - content
+
+######
+
+- name: install php
+  yum: pkg=php state= installed
+  tags:
+    - app
+  notify: restart apache
+
+- name: create app dir
+  file: path=${aleapp} owner=root group=root mode=0755 state=directory
+  tags:
+    - app
+    - content
+
+- name: get app content
+  get_url: url=http://TODO dest=${aleapp} mode=0755
+    - app
+    - content
