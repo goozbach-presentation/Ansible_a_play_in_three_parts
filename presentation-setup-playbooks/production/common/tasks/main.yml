@@ -109,7 +109,26 @@
   notify: restart apache
 
 - name: get web content
-  git: 
+  git: repo=https://github.com/goozbach-presentation/Ansible_a_play_in_three_parts.git dest=/var/www/html
   tags:
     - web
+    - content
+
+######
+
+- name: install php
+  yum: pkg=php state= installed
+  tags:
+    - app
+  notify: restart apache
+
+- name: create app dir
+  file: path=${aleapp} owner=root group=root mode=0755 state=directory
+  tags:
+    - app
+    - content
+
+- name: get app content
+  get_url: url=http://TODO dest=${aleapp} mode=0755
+    - app
     - content
