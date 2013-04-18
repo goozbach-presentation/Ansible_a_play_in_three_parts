@@ -32,7 +32,7 @@
   ignore_errors: yes
 
 - name: ensure anonymous users are not in the database
-  mysql_user: name='' host=$item state=absent login_password=${root_db_password}
+  mysql_user: name='' host=$item state=absent login_user=root login_password=${root_db_password}
   with_items:
     - localhost
     - $inventory_hostname
@@ -41,7 +41,7 @@
   ignore_errors: yes
 
 - name: remove the test database
-  mysql_db: name=test state=absent login_password=${root_db_password}
+  mysql_db: name=test state=absent login_user=root login_password=${root_db_password}
   tags:
     - db
 
